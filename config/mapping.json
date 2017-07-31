@@ -1,0 +1,23 @@
+{
+  "template": "awsma*",
+  "settings": {
+    "index.refresh_interval": "5s"
+  },
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "enabled": true
+      },
+      "dynamic_templates": [
+        {
+          "timestamp_fields": {
+            "match": "*_timestamp",
+            "mapping": {
+              "type": "date"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
