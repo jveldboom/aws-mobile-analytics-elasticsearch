@@ -28,7 +28,7 @@ python import.py \
 
 
 ### Import Script Arguments
-| Arguments | Description |
+| Arguments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
 | --- | --- |
 | --bucket | **Required** AWS Mobile Analytics S3 bucket - full path up to the year<br>Exmaple: `mobile-analytics-.../awsma/events/be2b019...`
 | --name   | Elasticsearch index name - defaults to `app`. The full index name will be prepended with "awsma_" to use the index mapping template. Also, spaces will be removed and characters will be forced to lowercase.
