@@ -18,7 +18,7 @@ docker-compose up
 python import.py \
     --name "ColorPal" \
     --aws-profile default \
-    --bucket mobile-analytics-06-27-2017-7e779f4f3e4a451a916b743bbe5d32df/awsma/events/be2b01906dbc4cfdb06f51e761b8ab76 \
+    --bucket mobile-analytics-.../awsma/events/{app-id}} \
     --year 2017 \
     --month 7 \
     --day 29 \
