@@ -2,7 +2,7 @@
 Import AWS Mobile Analytics data into Elasticsearch to view and analyze within Kibana.
 
 ### Requirements
-- Docker
+- Docker with docker-compose
 - Python and requests library
     - `pip install requests`
 
@@ -27,7 +27,7 @@ python import.py \
 ```
 
 
-### Import Script Arguments
+### Import Arguments
 | Arguments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
 | --- | --- |
 | --bucket | **Required** AWS Mobile Analytics S3 bucket - full path up to the year<br>Example: `mobile-analytics-.../awsma/events/be2b019...`
@@ -38,3 +38,10 @@ python import.py \
 | --day    | Day to import - **must also include --year & --month**
 | --delete-date | Delete a certain date or date range. Months or days with a single digits must have a leading zero. (`8` should be `08`) Single date: `2017-08-01` Or all of a month `2017-08-*`
 | --no-s3-import | Flag to **not** import files from S3. Useful if you already have the files downloaded
+
+## What's Going On in the Python Import
+1. Downloads the AWS Mobile Analytics S3 files locally
+2. Unzips the S3 gzipped files
+3. Creates custom mapping if one does not already exist
+4. Create Elasticsearch index by date
+4. Import unzipped S3 files into Elasticsearch
